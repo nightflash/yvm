@@ -37,7 +37,7 @@ describe('rm', function() {
   it('should remove installed build', function() {
     rm('2001');
 
-    expect(ls()).toEqual(['2002', '2102', '3000']);
+    expect(ls()).toEqual(['3000', '2102', '2002']);
   });
 
 
@@ -48,8 +48,8 @@ describe('rm', function() {
     ]);
 
     expect(ls()).toEqual([
-      '2102',
-      '3000'
+      '3000',
+      '2102'
     ]);
   });
 
@@ -57,7 +57,7 @@ describe('rm', function() {
   it('should allow remove builds using mask', function() {
     rm('20*');
 
-    expect(ls()).toEqual(['2102', '3000']);
+    expect(ls()).toEqual(['3000', '2102']);
   });
 
 

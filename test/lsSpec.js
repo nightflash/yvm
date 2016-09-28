@@ -27,8 +27,16 @@ describe('ls', function() {
 
   it('should return installed builds', function() {
     expect(ls()).toEqual([
-      '2001',
-      '2002'
+      '2002',
+      '2001'
+    ]);
+  });
+
+
+  it('should sorted builds list', function() {
+    expect(ls()).toEqual([
+      '2002',
+      '2001'
     ]);
   });
 

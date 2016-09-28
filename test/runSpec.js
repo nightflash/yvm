@@ -45,6 +45,20 @@ describe('run', function() {
   });
 
 
+  it('should run latest build if we do not pass build number', function() {
+    run();
+
+    expect(process.spawn.calls[0].arguments).toEqual([
+      'java',
+      createRun.getDefaultVmParams().concat([
+        getBaseUrl(),
+        '-jar', getJarPathForBuildNumber('2002'),
+        getDefaultPort()
+      ])
+    ]);
+  });
+
+
   it('should run on context', function() {
     var buildNumber = '2022';
 
