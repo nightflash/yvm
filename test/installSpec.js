@@ -11,7 +11,7 @@ describe('install', function() {
         '2001': {'youtrack-2001.jar': ''},
         '2002': {'youtrack-2002.jar': ''}
       },
-      '/tmp': {'foo.jar': ''}
+      '/moo': {'foo.jar': ''}
     });
   });
 
@@ -29,7 +29,7 @@ describe('install', function() {
   it('should install build', function() {
     var bundleVersion = '202';
 
-    install('/tmp/foo.jar', {version: bundleVersion});
+    install('/moo/foo.jar', {version: bundleVersion});
 
     expect(fs.existsSync('/foo/bar/' + bundleVersion + '/youtrack-' + bundleVersion + '.jar'))
       .toEqual(true);
