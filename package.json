@@ -1,6 +1,6 @@
 {
   "name": "yvm",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "./lib/cli.js",
   "bin": "./lib/cli.js",
