@@ -9,6 +9,11 @@ nock.back.setMode('record');
 describe('ls-remote', function() {
 
 
+  beforeEach(function() {
+    expect.spyOn(console, 'log');
+  });
+
+
   var buildTypeId = 'foo';
   beforeEach(function() {
     nock.disableNetConnect();
@@ -45,6 +50,11 @@ describe('ls-remote', function() {
       buildTypeId: buildTypeId,
       count: 20
     }, done);
+  });
+
+
+  afterEach(function() {
+    expect.restoreSpies();
   });
 });
 
