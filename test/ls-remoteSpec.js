@@ -14,12 +14,16 @@ describe('ls-remote', function() {
   });
 
 
-  var buildTypeId = 'foo';
+  var buildTypeId;
+  var tcHostName;
   beforeEach(function() {
+    buildTypeId = 'foo';
+    tcHostName = 'http://foo.com';
+
     nock.disableNetConnect();
 
     this.buildsLocator = 'status:SUCCESS,buildType:' + buildTypeId;
-    this.serverBuildArtifactMock = nock('http://foo.com')
+    this.serverBuildArtifactMock = nock(tcHostName)
       .get('/guestAuth/app/rest/builds/');
   });
 
@@ -32,7 +36,7 @@ describe('ls-remote', function() {
 
 
     lsRemote({
-      hostname: 'http://foo.com',
+      hostname: tcHostName,
       buildTypeId: buildTypeId
     }, done);
   });
@@ -46,7 +50,7 @@ describe('ls-remote', function() {
 
 
     lsRemote({
-      hostname: 'http://foo.com',
+      hostname: tcHostName,
       buildTypeId: buildTypeId,
       count: 20
     }, done);

@@ -8,8 +8,8 @@ describe('install', function() {
   beforeEach(function() {
     mock({
       '/foo/bar': {
-        '2001': {'youtrack-2001.jar': ''},
-        '2002': {'youtrack-2002.jar': ''}
+        '7.0.2001': {'youtrack-7.0.2001.jar': ''},
+        '7.0.2002': {'youtrack-7.0.2002.jar': ''}
       },
       '/moo': {'foo.jar': ''}
     });
@@ -27,7 +27,7 @@ describe('install', function() {
 
 
   it('should install build', function() {
-    var bundleVersion = '202';
+    var bundleVersion = '7.0.202';
 
     install('/moo/foo.jar', {version: bundleVersion});
 

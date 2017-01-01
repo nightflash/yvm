@@ -64,7 +64,7 @@ describe('createBuildArtifactRequest', function() {
 
   it('should create request', function() {
     expect(testRequest.path)
-      .toEqual('/guestAuth/app/rest/builds/buildType:(buildTypeId),number:(buildNumber)/artifacts/content/youtrack-(buildNumber).jar');
+      .toEqual('/guestAuth/app/rest/builds/buildType:(buildTypeId),number:(buildNumber)/artifacts/content/(artifactName)');
   });
 
 
